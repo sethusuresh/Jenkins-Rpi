@@ -4,6 +4,11 @@ RUN sudo apt install -y default-jdk
 RUN java -version
 RUN sudo apt-get install -y apt-transport-https ca-certificates
 RUN sudo apt-get install -y git
+RUN sudo apt-get install -y zip unzip
+RUN wget https://services.gradle.org/distributions/gradle-5.2.1-bin.zip -P /tmp
+RUN sudo unzip -d /opt/gradle /tmp/gradle-*.zip
+ENV PATH=$PATH:/opt/gradle/gradle-5.2.1/bin
+RUN gradle -v
 RUN wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 RUN sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 RUN sudo apt-get update
