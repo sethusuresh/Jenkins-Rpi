@@ -12,6 +12,6 @@ COMMANDS:-
     
 PS:- During the initial launch, jenkins will prompt for password which will be present in the file initialAdminPassword inside the directory  /var/lib/docker/volumes/jenkins/secrets.
 
-NOTE:
+NOTE:-
 This repository is linked to the DockerHub. So after evry commit, the DockerHub will automatically build the images and update in the DockerHub repository with the tag "latest"
     
